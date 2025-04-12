@@ -37,7 +37,7 @@ public class SavingsGoalController {
 
     @PutMapping("/{id}")
     public ResponseEntity<SavingsGoal> updateSavingsGoal(@PathVariable Long id, @RequestBody SavingsGoal savingsGoal) {
-        Optional<SavingsGoal> updatedSavingsGoal = savingsGoalService.updateSavingsGoal(id, savingsGoal);
+        Optional<SavingsGoal> updatedSavingsGoal = Optional.ofNullable(savingsGoalService.updateSavingsGoal(id, savingsGoal));
         return updatedSavingsGoal.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 

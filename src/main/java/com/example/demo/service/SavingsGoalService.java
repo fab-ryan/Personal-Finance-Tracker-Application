@@ -22,7 +22,7 @@ public class SavingsGoalService {
         return savingsGoalRepository.findById(id);
     }
 
-    public SavingsGoal updateSavingsGoal(SavingsGoal savingsGoal) {
+    public SavingsGoal updateSavingsGoal(Long id,SavingsGoal savingsGoal) {
         return savingsGoalRepository.save(savingsGoal);
     }
 

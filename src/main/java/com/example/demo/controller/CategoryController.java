@@ -31,7 +31,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category category) {
-        Optional<Category> updatedCategory = categoryService.updateCategory(id, category);
+        Optional<Category> updatedCategory = Optional.ofNullable(categoryService.updateCategory(id, category));
         return updatedCategory.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 

@@ -22,7 +22,11 @@ public class TransactionService {
         return transactionRepository.findById(id);
     }
 
-    public Transaction updateTransaction(Transaction transaction) {
+    public Transaction updateTransaction(Long id, Transaction transaction) {
+       Optional<Transaction> transaction1 = transactionRepository.findById(id);
+       if(transaction1.isPresent()){
+           
+       }
         return transactionRepository.save(transaction);
     }
 
